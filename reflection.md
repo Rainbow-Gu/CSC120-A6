@@ -19,4 +19,4 @@ Tests
 - `testTrainConstructor()`: Test to verify that a Train initializes correctly with a given number of Cars by checking that cars at valid indices (0, 1, 2) are not null and that accessing an invalid index 3 correctly throws exception
 - `testTrainPassengerCount()`: Test to ensure the Train’s total Passenger count updates as Passengers board and leave (e.g. adding one passenger means there are 3(# cars) * 4(# seats/car) -1 = 11 seats remaining).
 - `testTrainGetCar()`: Test to check that the getCar(int i) method returns the expected Car by checking cars and valid and that their properties are the same after adding a Passenger to that car at index 0
-- `testTrainPrintManifest()`***||-- FILL THIS BLANK --||***
+- `testTrainPrintManifest()`: Test the printManifest() method to ensure it iterates through the Trains Cars correctly by examining the printed results

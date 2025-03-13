@@ -21,7 +21,7 @@ YES 10 pts: The class meaningfully implements each of the tests in described in 
       YES `testTrainConstructor()`
       YES `testTrainPassengerCount()`
       YES `testTrainGetCar()`
-      _____ `testTrainPrintManifest()`
+      YES `testTrainPrintManifest()`
 
 ## General Items:
 

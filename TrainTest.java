@@ -1,6 +1,9 @@
 import org.junit.*;
 import static org.junit.Assert.*;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 /**
  * Unit tests for the Train classes
  */
@@ -131,10 +134,18 @@ public class TrainTest {
 
     /**
      * Test the printManifest() method to ensure it iterates through the Trains Cars correctly
+     * Used: https://stackoverflow.com/questions/1119385/junit-test-for-system-out-println
      */
     @Test
     public void testTrainPrintManifest() {
-        
+        train.getCar(0).addPassenger(passenger);
+        PrintStream originalOut = System.out;
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+        train.printManifest();
+        String expectedOutput = "\nCar 1\nPassenger(s) onboard:\n- Alice\n\nCar 2\nThis car is EMPTY.\n\nCar 3\nThis car is EMPTY.\n";
+        assertEquals(expectedOutput, outputStream.toString());
+        System.setOut(originalOut);
+
     }
-    
 }
